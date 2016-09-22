@@ -1,13 +1,16 @@
 package dat152.hib.no;
 
-import javax.servlet.jsp.tagext.*;
-import javax.servlet.jsp.*;
-import java.io.*;
+import java.io.IOException;
+
+import javax.servlet.jsp.JspException;
+import javax.servlet.jsp.JspWriter;
+import javax.servlet.jsp.tagext.SimpleTagSupport;
 
 public class CopyrightTag extends SimpleTagSupport {
-
-  public void doTag() throws JspException, IOException {
-    JspWriter out = getJspContext().getOut();
-    out.println("Hello Custom Tag!");
-  }
+	
+	@Override
+	public void doTag() throws JspException, IOException {
+		JspWriter out = getJspContext().getOut();
+		out.print("Hello World!");
+	}
 }
