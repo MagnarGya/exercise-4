@@ -1,4 +1,4 @@
-package dat152.hib.no;
+package no.hib.dat152;
 
 import java.io.IOException;
 
