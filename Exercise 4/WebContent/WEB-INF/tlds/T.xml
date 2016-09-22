@@ -10,7 +10,7 @@ version="2.0">
 <tag>
 <description>Shows copyright from the since mark to this year, in roman numerals.</description>
 <name>copyright</name>
-<tag-class>dat152.hib.no.CopyrightTag</tag-class>
+<tag-class>no.hib.dat152.CopyrightTag</tag-class>
 <body-content>empty</body-content>
 </tag>
 </taglib>
