@@ -28,8 +28,6 @@ public class HomeServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//Get locale from browser
-		ResourceBundle labels = LocaleService.getLabels(request);
 		request.getRequestDispatcher("WEB-INF/jsp/Home.jsp").forward(request, response);;	
 	}
 
