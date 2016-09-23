@@ -8,6 +8,10 @@
 <title>Cart</title>
 </head>
 <body>
+	<a href="Cart" command="ChangeLanguage" name="locale" value="no">Norsk</a>
+	<a href="Cart" command="ChangeLanguage" name="locale" value="en">English (US)</a>
+	<a href="Cart" command="ChangeLanguage" name="locale" value="es">Español</a> 
+	<br>
 <T:copyright since="2008">HiB</T:copyright>
 </body>
 </html>

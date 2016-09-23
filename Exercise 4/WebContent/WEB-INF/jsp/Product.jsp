@@ -8,6 +8,9 @@
 <title>Products</title>
 </head>
 <body>
+<a href="Product" command="ChangeLanguage" name="locale" value="no">Norsk</a>
+	<a href="Product" command="ChangeLanguage" name="locale" value="en">English (US)</a>
+	<a href="Product" command="ChangeLanguage" name="locale" value="es">Español</a> 
 <T:copyright since="2008">HiB</T:copyright>
 </body>
 </html>
