@@ -13,7 +13,7 @@ public class CopyrightTag extends SimpleTagSupport {
 	@Override
 	public void doTag() throws JspException, IOException {
 		JspWriter out = getJspContext().getOut();
-		out.print("Hello World!" + since);
+		out.print("Hello World!" + toRomanNumerals(since));
 	}
 	
 	public void setSince(String since) {
