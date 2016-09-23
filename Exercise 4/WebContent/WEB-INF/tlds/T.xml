@@ -8,7 +8,7 @@ version="2.0">
 <short-name>T</short-name>
 <uri>T</uri>
 <tag>
-<description>Shows copyright from the since mark to this year, in roman numerals.</description>
+<description>Prints out copyright from the since mark to this year, in roman numerals.</description>
 <name>copyright</name>
 <tag-class>no.hib.dat152.CopyrightTag</tag-class>
 <body-content>empty</body-content>
