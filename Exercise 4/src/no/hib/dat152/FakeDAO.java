@@ -6,6 +6,4 @@ public class FakeDAO {
 	Product getProduct(int pno) {
 		return products[pno];
 	}
-	
-	
 }
