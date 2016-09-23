@@ -1,9 +1,12 @@
 package no.hib.dat152;
 
 import java.io.IOException;
+import java.io.StringWriter;
+import java.util.Calendar;
 
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
+import javax.servlet.jsp.tagext.BodyContent;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 
 public class CopyrightTag extends SimpleTagSupport {
@@ -13,7 +16,11 @@ public class CopyrightTag extends SimpleTagSupport {
 	@Override
 	public void doTag() throws JspException, IOException {
 		JspWriter out = getJspContext().getOut();
-		out.print("Hello World!" + toRomanNumerals(since));
+		int year = Calendar.getInstance().get(Calendar.YEAR);
+		StringWriter stringWriter = new StringWriter();
+		getJspBody().invoke(stringWriter);
+		
+		out.print("© " + toRomanNumerals(since) + "-" + toRomanNumerals(year) + " " +stringWriter.toString());
 	}
 	
 	public void setSince(String since) {

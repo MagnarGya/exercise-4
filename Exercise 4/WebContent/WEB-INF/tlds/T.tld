@@ -17,4 +17,13 @@ version="2.0">
 	<required>true</required>
 </attribute>
 </tag>
+<tag>
+<name>shorttext</name>
+<tag-class>no.hib.dat152.ShorttextTag</tag-class>
+<body-content>scriptless</body-content>
+<attribute>
+	<name>maxchars</name>
+	<required>true</required>
+</attribute>
+</tag>
 </taglib>
