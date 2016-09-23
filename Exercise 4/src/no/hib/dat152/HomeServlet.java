@@ -1,6 +1,8 @@
 package no.hib.dat152;
 
 import java.io.IOException;
+import java.util.ResourceBundle;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,6 +28,8 @@ public class HomeServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//Get locale from browser
+		ResourceBundle labels = LocaleService.getLabels(request);
 		request.getRequestDispatcher("WEB-INF/jsp/Home.jsp").forward(request, response);;	
 	}
 
