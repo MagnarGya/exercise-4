@@ -7,8 +7,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Home</title>
 </head>
-<body> 
+<body>
+	<a href="home" command="ChangeLanguage" name="locale" value="no">Norsk</a>
+	<a href="home" command="ChangeLanguage" name="locale" value="en">English (US)</a>
+	<a href="home" command="ChangeLanguage" name="locale" value="es">Español</a> 
+	<br>
 	<T:copyright since="2008">HiB</T:copyright>
-	<T:shorttext maxchars="35">Hello, may I talk to you about the great news? Our lord and saviour Gaben is best :)</T:shorttext>
 </body>
 </html>
