@@ -8,6 +8,6 @@
 <title>Home</title>
 </head>
 <body> 
-	<T: copyright since="2008">HiB</T: copyright>
+	<T:copyright since="2008">HiB</T:copyright>
 </body>
 </html>
