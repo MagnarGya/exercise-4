@@ -1,21 +1,15 @@
 package no.hib.dat152;
 
+import java.util.ArrayList;
+
 public class Cart {
-	Product[] cart;
+	ArrayList<Product> cart;
 	
 	Cart(){
-		cart = new Product[0];
+		cart = new ArrayList<Product>();
 	}
 	
-	public void addProduct(Product p){
-		Product[] tempCart = new Product[cart.length+1];
-		for(int i = 0; i < cart.length; i++){
-			tempCart[i] = cart[i];
-		}
-		tempCart[tempCart.length-1] = p;
-		
-		cart = tempCart;
+	void add(Product product){
+		cart.add(product);
 	}
-	
-	
 }
