@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Home</title>
 </head>
-<body>
-	<T: copyright since="2008"/>
+<body> 
+	<T: copyright since="2008">HiB</T: copyright>
 </body>
 </html>
