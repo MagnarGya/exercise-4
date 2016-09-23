@@ -9,6 +9,5 @@
 </head>
 <body> 
 	<T:copyright since="2008">HiB</T:copyright>
-	<T:shorttext maxchars="35">Hello, may I talk to you about the great news? Our lord and saviour Gaben is best :)</T:shorttext>
 </body>
 </html>
