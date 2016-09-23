@@ -8,10 +8,6 @@
 <title>Home</title>
 </head>
 <body>
-	<a href="home" command="ChangeLanguage" name="locale" value="no">Norsk</a>
-	<a href="home" command="ChangeLanguage" name="locale" value="en">English (US)</a>
-	<a href="home" command="ChangeLanguage" name="locale" value="es">Español</a> 
-	<br>
 	<T:copyright since="2008">HiB</T:copyright>
 </body>
 </html>
