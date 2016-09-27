@@ -23,7 +23,6 @@
                 <option value="es" ${language == 'es' ? 'selected' : ''}>Español</option>
             </select>
         </form>
-        
 	<br>
 	<p><fmt:message key="welcomeMessage"></fmt:message></p>
 	<T:copyright since="2008">HiB</T:copyright>
