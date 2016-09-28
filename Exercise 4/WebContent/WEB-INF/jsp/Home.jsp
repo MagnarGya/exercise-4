@@ -9,7 +9,7 @@
 <head>
 <c:set var="language" value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale} }" scope="session" />
 <fmt:setLocale value="${language}"/>
-<fmt:setBundle basename="Labels" />
+<fmt:setBundle basename="no.hib.dat152.labels.Labels" var="labels"/>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Home</title>
 <style>form{
@@ -25,7 +25,7 @@
             </select>
         </form>
 	<br>
-	<p><fmt:message key="welcomeMessage"></fmt:message></p>
+	<p><fmt:message key="welcomeMessage" bundle="${labels}"/></p>
 	<T:copyright since="2008">HiB</T:copyright>
 </body>
 </html>
