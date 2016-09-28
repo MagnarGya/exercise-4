@@ -1,9 +1,9 @@
 package no.hib.dat152;
 
 public class FakeDAO {
-	Product[] products = {new Product(0,"Name1",2.50f,"imagepath1"),new Product(1,"Name2",3.50f,"imagepath2")};
-	String[][] descriptions = {{"This is description", "Dette er beskrivelse", "Donde esta la biblioteca?"}
-							  ,{"This is a different description", "Beskrivelse?", "Quanta costa la biblioteca?"}};
+	Product[] products = {new Product(0,"White Chair",2.50f,"WEB-INF/white-chair.jpg"),new Product(1,"Black Chair",3.50f,"WEB-INF/black-chair.jpg")};
+	String[][] descriptions = {{"This chair is the ultimate chair for your living room", "Denne stolen er den ultimate stuestolen", "Donde esta la biblioteca?"}
+							  ,{"This chair is the best chair for your sleeping room", "Denne stolen er den beste stolen for soverommet", "Quanta costa la biblioteca?"}};
 	
 	Product getProduct(int pno) {
 		return products[pno];
