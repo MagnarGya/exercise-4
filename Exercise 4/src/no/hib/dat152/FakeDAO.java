@@ -5,7 +5,8 @@ public class FakeDAO {
 	String[][] descriptions = {{"This chair is the ultimate chair for your living room", "Denne stolen er den ultimate stuestolen", "Donde esta la biblioteca?"}
 							  ,{"This chair is the best chair for your sleeping room", "Denne stolen er den beste stolen for soverommet", "Quanta costa la biblioteca?"}};
 	
-	Product getProduct(int pno) {
+	Product getProduct(String pn) {
+		int pno = Integer.parseInt(pn);
 		return products[pno];
 	}
 	
