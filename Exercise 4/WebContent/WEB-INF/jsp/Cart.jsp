@@ -40,7 +40,7 @@
 		
 		</c:forEach>
 			
-			<td style="bold" colspan="4"><fmt:message key=totalAmount bundle="${labels }"/>
+			<td style="bold" colspan="4"><fmt:message key="totalAmount" bundle="${labels }"/>
 			<td style="bold">${param.sum}</td>
 		
 		</tr>
