@@ -20,7 +20,7 @@
                 <option value="es" ${language == 'es' ? 'selected' : ''}>Español</option>
             </select>
     </form>
-	<h1><fmt:message key=c bundle="${labels }"/></h1>
+	<h1><fmt:message key=cart bundle="${labels}"/></h1>
 	<table>
 		<tr>
 			<th><fmt:message key=name bundle="${labels }"/></th>
