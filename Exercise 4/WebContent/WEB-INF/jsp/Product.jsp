@@ -8,6 +8,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Products</title>
+<c:set var="language" value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}" scope="session" />
+<fmt:setLocale value="${language}"/>
+<fmt:setBundle basename="no.hib.dat152.labels.Labels" var="labels"/>
 </head>
 <body>
 <form>
@@ -18,9 +21,9 @@
             </select>
 </form>
 
-<h1><fmt:message></fmt:message></h1>
+<h1></h1>
 
-
+<a href="cart"><fmt:message key="goToCart" bundle="${labels}"/></a> </br>
 <T:copyright since="2008">HiB</T:copyright>
 </body>
 </html>

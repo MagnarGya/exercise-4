@@ -45,7 +45,7 @@ public class ProductServlet extends HttpServlet {
 			session.setAttribute("cart", cart);
 		}else{
 			ArrayList<Product> cart = new ArrayList<Product>();
-			cart.addAll(FakeDAO.products[Integer.parseInt(request.getParameter("product"))]);
+			cart.add(FakeDAO.products[Integer.parseInt(request.getParameter("product"))]);
 			session.setAttribute("cart", cart);
 		}
 		doGet(request, response);
