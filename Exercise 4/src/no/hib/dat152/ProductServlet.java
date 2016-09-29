@@ -1,6 +1,8 @@
 package no.hib.dat152;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,7 +37,17 @@ public class ProductServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		HttpSession session = request.getSession();
+		if(session.getAttribute("cart")!=null){
+			@SuppressWarnings("unchecked")
+			ArrayList<Product> cart = (ArrayList<Product>) session.getAttribute("cart");
+			cart.add(FakeDAO.products[Integer.parseInt(request.getParameter("product"))]);
+			session.setAttribute("cart", cart);
+		}else{
+			ArrayList<Product> cart = new ArrayList<Product>();
+			cart.addAll(FakeDAO.products[Integer.parseInt(request.getParameter("product"))]);
+			session.setAttribute("cart", cart);
+		}
 		doGet(request, response);
 	}
 

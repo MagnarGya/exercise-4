@@ -16,7 +16,11 @@
                 <option value="no" ${language == 'no' ? 'selected' : ''}>Norsk</option>
                 <option value="es" ${language == 'es' ? 'selected' : ''}>Español</option>
             </select>
-    </form>
+</form>
+
+<h1><fmt:message></fmt:message></h1>
+
+
 <T:copyright since="2008">HiB</T:copyright>
 </body>
 </html>
