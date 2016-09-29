@@ -20,6 +20,34 @@
                 <option value="es" ${language == 'es' ? 'selected' : ''}>Español</option>
             </select>
     </form>
+	<h1><fmt:message key=c bundle="${labels }"/></h1>
+	<table>
+		<tr>
+			<th><fmt:message key=name bundle="${labels }"/></th>
+			<th><fmt:message key=shortDescription bundle="${labels }"/></th>
+			<th><fmt:message key=price bundle="${labels }"/></th>
+			<th><fmt:message key=quantity bundle="${labels }"/></th>
+			<th><fmt:message key=total bundle="${labels }"/></th>
+		</tr>
+		<c:forEach var="pair" items="${cartMap}">
+			<tr>
+				<td>${pair.key.pName}</td>
+				<td>${param.descriptionMap['key'] }</td>
+				<td>${pair.key.priceInEuro}</td>
+				<td>${pair.value}</td>
+				<td>${${pair.key.priceInEuro} * ${pair.value} }</td>
+		   </tr>
+		
+		</c:forEach>
+			
+			<td style="bold" colspan="4"><fmt:message key=totalAmount bundle="${labels }"/>
+			<td style="bold">${param.sum}</td>
+		
+		</tr>
+	
+	</table>
+	<a href="home"><fmt:message key="home" bundle="${labels}"/></a>
+	<a href="product"><fmt:message key="products" bundle="${labels}"/></a></br>
 <T:copyright since="2008">HiB</T:copyright>
 </body>
 </html>
