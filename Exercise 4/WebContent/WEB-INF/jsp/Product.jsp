@@ -28,15 +28,18 @@ img{
             </select>
 </form>
 
-<h1><fmt:message key="products" bundle="${label}"></fmt:message></h1>
+<h1><fmt:message key="products" bundle="${labels}"></fmt:message></h1>
 
 <h3><%out.print(no.hib.dat152.FakeDAO.getProduct(0).getpName()); %></h3>
 <p style=inline:true;> <img src=<%out.print(no.hib.dat152.FakeDAO.getProduct(0).getImageFile()); %> alt=<fmt:message key="pictureTextWhite" bundle="${labels}"/>>
-<%out.print(no.hib.dat152.FakeDAO.getDescription(0, (String)session.getAttribute("language"))); %> 
+<p> <fmt:message key="name" bundle="${labels}"></fmt:message> : <%out.print(no.hib.dat152.FakeDAO.getProduct(0).getpName()); %> </p>
+<p> <fmt:message key="price" bundle="${labels}"></fmt:message> : <%out.print(no.hib.dat152.FakeDAO.getProduct(0).getPriceInEuro()); %> </p>
+<p> <fmt:message key="description" bundle="${labels}"></fmt:message> : <%out.print(no.hib.dat152.FakeDAO.getDescription(0, (String)session.getAttribute("language"))); %>  </p>
 <form action="product" method="POST"><input type="hidden" name = "product" value="0"><input type="submit" value="<fmt:message key="addToCart" bundle="${labels}"></fmt:message>" ></form>
 
 <h3><%out.print(no.hib.dat152.FakeDAO.getProduct(1).getpName()); %></h3>
 <p style=inline:true;> <img src=<%out.print(no.hib.dat152.FakeDAO.getProduct(1).getImageFile()); %> alt=<fmt:message key="pictureTextBlack" bundle="${labels}"/>>
+<p> <fmt:message key="name" bundle="${labels}"></fmt:message> : <%out.print(no.hib.dat152.FakeDAO.getProduct(1).getpName()); %> </p>
 <%out.print(no.hib.dat152.FakeDAO.getDescription(1, (String)session.getAttribute("language"))); %> 
 <form action="product" method="POST"><input type="hidden" name = "product" value="1"><input type="submit" value="<fmt:message key="addToCart" bundle="${labels}"></fmt:message>" ></form>
 <a href="cart"><fmt:message key="goToCart" bundle="${labels}"/></a> </br>
