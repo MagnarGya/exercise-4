@@ -5,12 +5,11 @@ public class FakeDAO {
 	static final String[][] descriptions = {{"This chair is the ultimate chair for your living room", "Denne stolen er den ultimate stuestolen", "La último silla de sala"}
 							  ,{"This chair is the best chair for your sleeping room", "Denne stolen er den beste stolen for soverommet", "La silla mejor para el dormitorio"}};
 	
-	 static Product getProduct(String pn) {
-		int pno = Integer.parseInt(pn);
+	 static public Product getProduct(int pno) {
 		return products[pno];
 	}
 	
-	static String getDescription(int pno, String language) {
+	static public String getDescription(int pno, String language) {
 		int langcode = 0;
 		
 		if (language.equals("no")) {

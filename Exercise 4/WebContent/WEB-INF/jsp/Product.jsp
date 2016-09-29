@@ -21,7 +21,8 @@
             </select>
 </form>
 
-<h1></h1>
+<h1><%out.print(no.hib.dat152.FakeDAO.getProduct(0).getpName()); %></h1>
+<img src=<%out.print(no.hib.dat152.FakeDAO.getProduct(0).getImageFile()); %> alt >
 
 <a href="cart"><fmt:message key="goToCart" bundle="${labels}"/></a> </br>
 <T:copyright since="2008">HiB</T:copyright>
