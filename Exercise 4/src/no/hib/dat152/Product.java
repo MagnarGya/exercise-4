@@ -30,4 +30,8 @@ public class Product {
 	public String getImageFile() {
 		return imageFile;
 	}
+	
+	public int hashCode() {
+		return pno;
+	}
 }

@@ -2,6 +2,7 @@ package no.hib.dat152;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -30,11 +31,15 @@ public class CartServlet extends HttpServlet {
 	@SuppressWarnings("unchecked")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ArrayList<Product> products = (ArrayList<Product>) request.getSession().getAttribute("cart");
-		int[] antall = new int[2];
+		HashMap<Product,Integer> cartMap = new HashMap<Product,Integer>();
 		for (Product p : products) {
-			antall[p.pno]++;
+			if (cartMap.containsKey(p)) {
+				cartMap.put(p, cartMap.get(p)+1);
+			} else {
+				cartMap.put(p, 1);
+			}
 		}
-		request.setAttribute("antall", antall);
+		request.setAttribute("cartMap", cartMap);
 		request.getRequestDispatcher("WEB-INF/jsp/Cart.jsp").forward(request, response);
 	}
 
