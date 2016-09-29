@@ -2,7 +2,6 @@ package no.hib.dat152;
 
 public class Product {
 	int pno;
-
 	String pName;
 	float priceInEuro;
 	String imageFile;
