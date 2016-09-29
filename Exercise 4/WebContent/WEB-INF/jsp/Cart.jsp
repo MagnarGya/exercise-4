@@ -35,7 +35,7 @@
 				<td>${param.descriptionMap['key'] }</td>
 				<td>${pair.key.priceInEuro}</td>
 				<td>${pair.value}</td>
-				<td>${${pair.key.priceInEuro} * ${pair.value} }</td>
+				<td>${${pair.key.priceInEuro} * ${pair.value}}</td>
 		   </tr>
 		
 		</c:forEach>
