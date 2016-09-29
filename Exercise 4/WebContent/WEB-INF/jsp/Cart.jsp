@@ -23,11 +23,11 @@
 	<h1><fmt:message key=cart bundle="${labels}"/></h1>
 	<table>
 		<tr>
-			<th><fmt:message key=name bundle="${labels}"/></th>
-			<th><fmt:message key=shortDescription bundle="${labels}"/></th>
-			<th><fmt:message key=price bundle="${labels}"/></th>
-			<th><fmt:message key=quantity bundle="${labels}"/></th>
-			<th><fmt:message key=total bundle="${labels}"/></th>
+			<th><fmt:message key="name" bundle="${labels}"/></th>
+			<th><fmt:message key="shortDescription" bundle="${labels}"/></th>
+			<th><fmt:message key="price" bundle="${labels}"/></th>
+			<th><fmt:message key="quantity" bundle="${labels}"/></th>
+			<th><fmt:message key="total" bundle="${labels}"/></th>
 		</tr>
 		<c:forEach var="pair" items="${cartMap}">
 			<tr>
