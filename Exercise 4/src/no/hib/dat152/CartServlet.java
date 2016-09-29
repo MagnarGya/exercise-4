@@ -1,6 +1,8 @@
 package no.hib.dat152;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -25,7 +27,14 @@ public class CartServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+	@SuppressWarnings("unchecked")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		ArrayList<Product> products = (ArrayList<Product>) request.getSession().getAttribute("cart");
+		int[] antall = new int[2];
+		for (Product p : products) {
+			antall[p.pno]++;
+		}
+		request.setAttribute("antall", antall);
 		request.getRequestDispatcher("WEB-INF/jsp/Cart.jsp").forward(request, response);
 	}
 
