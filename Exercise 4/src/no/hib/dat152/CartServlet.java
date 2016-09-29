@@ -47,6 +47,7 @@ public class CartServlet extends HttpServlet {
 		}
 		
 		request.setAttribute("cartMap", cartMap);
+		request.setAttribute("descriptionMap", descriptionMap);
 		request.getRequestDispatcher("WEB-INF/jsp/Cart.jsp").forward(request, response);
 	}
 
