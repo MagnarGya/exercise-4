@@ -33,20 +33,26 @@ public class CartServlet extends HttpServlet {
 		ArrayList<Product> products = (ArrayList<Product>) request.getSession().getAttribute("cart");
 		HashMap<Product,Integer> cartMap = new HashMap<Product,Integer>();
 		float sum = 0;
-		for (Product p : products) {
-			if (cartMap.containsKey(p)) {
-				cartMap.put(p, cartMap.get(p)+1);
-				sum+=p.getPriceInEuro();
-			} else {
-				cartMap.put(p, 1);
-				sum+=p.getPriceInEuro();
+		HashMap<Product,String> descriptionMap = new HashMap<Product,String>();
+		if(products != null){
+			for (Product p : products) {
+				if (cartMap.containsKey(p)) {
+					cartMap.put(p, cartMap.get(p)+1);
+					sum+=p.getPriceInEuro();
+				} else {
+					cartMap.put(p, 1);
+					sum+=p.getPriceInEuro();
+				}
+			}
+			
+			for (Product p : cartMap.keySet()) {
+				descriptionMap.put(p, FakeDAO.getDescription(p.pno, request.getLocale().toString()));
 			}
 		}
 		
-		HashMap<Product,String> descriptionMap = new HashMap<Product,String>();
-		for (Product p : cartMap.keySet()) {
-			descriptionMap.put(p, FakeDAO.getDescription(p.pno, request.getLocale().toString()));
-		}
+		
+		
+		
 		
 		request.setAttribute("sum", sum);
 		request.setAttribute("cartMap", cartMap);
