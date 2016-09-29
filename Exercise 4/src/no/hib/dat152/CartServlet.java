@@ -32,12 +32,14 @@ public class CartServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ArrayList<Product> products = (ArrayList<Product>) request.getSession().getAttribute("cart");
 		HashMap<Product,Integer> cartMap = new HashMap<Product,Integer>();
-	
+		float sum = 0;
 		for (Product p : products) {
 			if (cartMap.containsKey(p)) {
 				cartMap.put(p, cartMap.get(p)+1);
+				sum+=p.getPriceInEuro();
 			} else {
 				cartMap.put(p, 1);
+				sum+=p.getPriceInEuro();
 			}
 		}
 		
@@ -46,6 +48,7 @@ public class CartServlet extends HttpServlet {
 			descriptionMap.put(p, FakeDAO.getDescription(p.pno, request.getLocale().toString()));
 		}
 		
+		request.setAttribute("sum", sum);
 		request.setAttribute("cartMap", cartMap);
 		request.setAttribute("descriptionMap", descriptionMap);
 		request.getRequestDispatcher("WEB-INF/jsp/Cart.jsp").forward(request, response);
