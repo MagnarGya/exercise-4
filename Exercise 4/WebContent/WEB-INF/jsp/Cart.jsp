@@ -35,8 +35,8 @@
 		
 			<tr>
 				<td>${pair.key.pName}</td>
-				<td>${description['key']}</td>
-				<td><T:shorttext maxchars="10">${pair.key.priceInEuro}</T:shorttext></td>
+				<td><T:shorttext maxchars="10">${description['key']}</T:shorttext></td>
+				<td>${pair.key.priceInEuro}</td>
 				<td>${pair.value}</td>
 				<td>${pair.key.priceInEuro * pair.value}</td>
 		   </tr>
@@ -50,7 +50,7 @@
 	
 	</table>
 	<a href="home"><fmt:message key="home" bundle="${labels}"/></a>
-	<a href="product"><fmt:message key="products" bundle="${labels}"/></a></br>
+	<a href="products"><fmt:message key="products" bundle="${labels}"/></a></br>
 <T:copyright since="2008">HiB</T:copyright>
 </body>
 </html>

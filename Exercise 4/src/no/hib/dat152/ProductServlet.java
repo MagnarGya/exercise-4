@@ -33,7 +33,7 @@ public class ProductServlet extends HttpServlet {
 		String langcode = session.getAttribute("language").toString();
 		
 		if (langcode == null) {
-			langcode = "en";
+			request.getLocale().toString();
 		}
 		
 		session.setAttribute("price0",FakeDAO.getProduct(0).getPriceInEuro());
