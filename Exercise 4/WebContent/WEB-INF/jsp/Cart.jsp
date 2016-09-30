@@ -9,6 +9,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Cart</title>
 <c:set var="language" value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}" scope="session" />
+<c:set var="sum" value='${requestScope["sum"]}' />
+<c:set var="description" value='${requestScope["descriptionMap"]}' />
 <fmt:setLocale value="${language}"/>
 <fmt:setBundle basename="no.hib.dat152.labels.Labels" var="labels"/>
 </head>
@@ -30,9 +32,10 @@
 			<th><fmt:message key="total" bundle="${labels}"/></th>
 		</tr>
 		<c:forEach var="pair" items="${cartMap}">
+		
 			<tr>
 				<td>${pair.key.pName}</td>
-				<td>${param.descriptionMap['key'] }</td>
+				<td>${description['key']}</td>
 				<td>${pair.key.priceInEuro}</td>
 				<td>${pair.value}</td>
 				<td>${pair.key.priceInEuro * pair.value}</td>
@@ -41,7 +44,7 @@
 		</c:forEach>
 			
 			<td style="bold" colspan="4"><fmt:message key="totalAmount" bundle="${labels }"/>
-			<td style="bold">${param.sum}</td>
+			<td style="bold">${sum}</td>
 		
 		</tr>
 	
