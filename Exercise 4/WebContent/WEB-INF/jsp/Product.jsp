@@ -32,13 +32,15 @@ img{
 
 <h3>${sessionScope.pName0}</h3>
 <p style=inline:true;> <img src="${sessionScope.imageFile0}" alt=<fmt:message key="pictureTextWhite" bundle="${labels}"/>>
-<p> <fmt:message key="name" bundle="${labels}"></fmt:message> : ${sessionScope.pName0} </p>
+<p> <fmt:message key="name" bundle="${labels}"/> : ${sessionScope.pName0} </p>
+<p> <fmt:message key="price" bundle="${labels}"/> : <fmt:formatNumber value="${sessionScope.price0}" type="CURRENCY" /> </p>
 <p> <fmt:message key="description" bundle="${labels}"></fmt:message> : ${sessionScope.pDescription0}  </p>
 <form action="products" method="POST"><input type="hidden" name = "product" value="0"><input type="submit" value="<fmt:message key="addToCart" bundle="${labels}"></fmt:message>" ></form>
 
 <h3>${sessionScope.pName1}</h3>
 <p style=inline:true;> <img src="${sessionScope.imageFile1}" alt=<fmt:message key="pictureTextBlack" bundle="${labels}"/>>
 <p> <fmt:message key="name" bundle="${labels}"></fmt:message> : ${sessionScope.pName1} </p>
+<p> <fmt:message key="price" bundle="${labels}"/> : <fmt:formatNumber value="${sessionScope.price1}" type="currency" /> </p>
 <p> <fmt:message key="description" bundle="${labels}"></fmt:message> : ${sessionScope.pDescription1}  </p>
 <form action="products" method="POST"><input type="hidden" name = "product" value="1"><input type="submit" value="<fmt:message key="addToCart" bundle="${labels}"></fmt:message>" ></form>
 <a href="cart"><fmt:message key="goToCart" bundle="${labels}"/></a> </br>
