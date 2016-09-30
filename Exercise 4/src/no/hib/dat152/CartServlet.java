@@ -45,12 +45,17 @@ public class CartServlet extends HttpServlet {
 				}
 			}
 			
-			String langcode = request.getSession().getAttribute("language").toString();
+			String langcode = null;
+			
 			if (request.getAttribute("language") != null) {
 				langcode = (String)request.getAttribute("language");
 			}
+			
 			if (langcode == null) {
-				langcode = request.getLocale().toString();
+				langcode = request.getSession().getAttribute("language").toString();
+				if (langcode == null) {
+					langcode = request.getLocale().toString();
+				}
 			}
 			
 			System.out.println(langcode);
