@@ -45,12 +45,8 @@ public class CartServlet extends HttpServlet {
 				}
 			}
 			
-			String langcode = null;
-			
-			if (request.getAttribute("language") != null) {
-				langcode = (String)request.getAttribute("language");
-			}
-			
+			String langcode = (String)request.getParameter("language");
+
 			if (langcode == null) {
 				langcode = request.getSession().getAttribute("language").toString();
 				if (langcode == null) {
@@ -64,10 +60,6 @@ public class CartServlet extends HttpServlet {
 				descriptionMap.put(p, FakeDAO.getDescription(p.pno, langcode));
 			}
 		}
-		
-		
-		
-		
 		
 		request.setAttribute("sum", sum);
 		request.setAttribute("cartMap", cartMap);
