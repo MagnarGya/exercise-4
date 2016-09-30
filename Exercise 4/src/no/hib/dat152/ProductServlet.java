@@ -30,15 +30,21 @@ public class ProductServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		session.setAttribute("price0",no.hib.dat152.FakeDAO.getProduct(0).getPriceInEuro());
-		session.setAttribute("imageFile0", no.hib.dat152.FakeDAO.getProduct(0).getImageFile());
-		session.setAttribute("pName0", no.hib.dat152.FakeDAO.getProduct(0).getpName());
-		session.setAttribute("pDescription0", no.hib.dat152.FakeDAO.getDescription(0, (String)session.getAttribute("language")));
+		String langcode = session.getAttribute("language").toString();
 		
-		session.setAttribute("price1",no.hib.dat152.FakeDAO.getProduct(1).getPriceInEuro());
-		session.setAttribute("imageFile1", no.hib.dat152.FakeDAO.getProduct(1).getImageFile());
-		session.setAttribute("pName1", no.hib.dat152.FakeDAO.getProduct(1).getpName());
-		session.setAttribute("pDescription1", no.hib.dat152.FakeDAO.getDescription(1, (String)session.getAttribute("language")));
+		if (langcode == null) {
+			langcode = "en";
+		}
+		
+		session.setAttribute("price0",FakeDAO.getProduct(0).getPriceInEuro());
+		session.setAttribute("imageFile0", FakeDAO.getProduct(0).getImageFile());
+		session.setAttribute("pName0", FakeDAO.getProduct(0).getpName());
+		session.setAttribute("pDescription0", FakeDAO.getDescription(0, langcode));
+		
+		session.setAttribute("price1",FakeDAO.getProduct(1).getPriceInEuro());
+		session.setAttribute("imageFile1", FakeDAO.getProduct(1).getImageFile());
+		session.setAttribute("pName1", FakeDAO.getProduct(1).getpName());
+		session.setAttribute("pDescription1", FakeDAO.getDescription(1, langcode));
 		
 		request.getRequestDispatcher("WEB-INF/jsp/Product.jsp").forward(request, response);
 	}
