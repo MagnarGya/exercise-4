@@ -35,7 +35,7 @@
 		
 			<tr>
 				<td>${pair.key.pName}</td>
-				<td><T:shorttext maxchars="10">${description['key']}</T:shorttext></td>
+				<td><T:shorttext maxchars="10">${description[pair.key]}</T:shorttext></td>
 				<td>${pair.key.priceInEuro}</td>
 				<td>${pair.value}</td>
 				<td>${pair.key.priceInEuro * pair.value}</td>
