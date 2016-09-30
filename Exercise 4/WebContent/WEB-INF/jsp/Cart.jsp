@@ -35,16 +35,16 @@
 		
 			<tr>
 				<td>${pair.key.pName}</td>
-				<td><T:shorttext maxchars="10">${description[pair.key]}</T:shorttext></td>
+				<td><T:shorttext maxchars="25">${description[pair.key]}</T:shorttext></td>
 				<td><fmt:message = key="currency" bundle="${labels}"/> <fmt:formatNumber value="${pair.key.priceInEuro}" type="currency" currencySymbol=""/></td>
 				<td>${pair.value}</td>
-				<td>${pair.key.priceInEuro * pair.value}</td>
+				<td><fmt:message = key="currency" bundle="${labels}"/> <fmt:formatNumber value="${pair.key.priceInEuro * pair.value}" type="currency" currencySymbol=""/></td>
 		   </tr>
 		
 		</c:forEach>
 			
 			<td style="bold" colspan="4"><fmt:message key="totalAmount" bundle="${labels }"/>
-			<td style="bold">${sum}</td>
+			<td style="bold"><fmt:message = key="currency" bundle="${labels}"/> <fmt:formatNumber value="${sum}" type="currency" currencySymbol=""/></td>
 		
 		</tr>
 	
