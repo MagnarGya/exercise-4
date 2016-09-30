@@ -45,8 +45,18 @@ public class CartServlet extends HttpServlet {
 				}
 			}
 			
+			String langcode = request.getSession().getAttribute("language").toString();
+			if (request.getAttribute("language") != null) {
+				langcode = (String)request.getAttribute("language");
+			}
+			if (langcode == null) {
+				langcode = request.getLocale().toString();
+			}
+			
+			System.out.println(langcode);
+			
 			for (Product p : cartMap.keySet()) {
-				descriptionMap.put(p, FakeDAO.getDescription(p.pno, request.getLocale().toString()));
+				descriptionMap.put(p, FakeDAO.getDescription(p.pno, langcode));
 			}
 		}
 		
