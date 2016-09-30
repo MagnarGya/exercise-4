@@ -36,7 +36,7 @@
 			<tr>
 				<td>${pair.key.pName}</td>
 				<td><T:shorttext maxchars="10">${description[pair.key]}</T:shorttext></td>
-				<td><fmt:message = key="currency" bundle="${labels}"/> <fmt:formatNumber value="${pair.key.priceInEuro}" type="currency" currencySymbol=""/></td>
+				<td><fmt:message key="currency" bundle="${labels}"/> <fmt:formatNumber value="${pair.key.priceInEuro}" type="currency" currencySymbol=""/></td>
 				<td>${pair.value}</td>
 				<td>${pair.key.priceInEuro * pair.value}</td>
 		   </tr>
