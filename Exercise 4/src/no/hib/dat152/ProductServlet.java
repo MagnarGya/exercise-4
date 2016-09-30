@@ -40,7 +40,10 @@ public class ProductServlet extends HttpServlet {
 		session.setAttribute("imageFile0", FakeDAO.getProduct(0).getImageFile());
 		session.setAttribute("pName0", FakeDAO.getProduct(0).getpName());
 		session.setAttribute("pDescription0", FakeDAO.getDescription(0, langcode));
-		
+		System.out.println(FakeDAO.getProduct(0).getPriceInEuro());
+		System.out.println(FakeDAO.getProduct(0).getImageFile());
+		System.out.println(FakeDAO.getProduct(0).getpName());
+		System.out.println(FakeDAO.getDescription(0, langcode));
 		session.setAttribute("price1",FakeDAO.getProduct(1).getPriceInEuro());
 		session.setAttribute("imageFile1", FakeDAO.getProduct(1).getImageFile());
 		session.setAttribute("pName1", FakeDAO.getProduct(1).getpName());

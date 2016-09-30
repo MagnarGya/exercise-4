@@ -17,8 +17,12 @@ public class ShorttextTag extends SimpleTagSupport{
 		getJspBody().invoke(stringWriter);
 		
 		String text = stringWriter.toString();
+		if(text.length()>maxChars){
+			out.print(text.substring(0,maxChars) + "...");
+		}else{
+			out.print(text);
+		}
 		
-		out.print(text.substring(0,maxChars) + "...");
 	}
 	
 	public void setMaxchars(String maxChars) {
