@@ -2,8 +2,11 @@ package no.hib.dat152;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -38,6 +41,9 @@ public class ProductServlet extends HttpServlet {
 				langcode = request.getLocale().toString();
 			}
 		}
+		
+		
+		
 		
 		session.setAttribute("price0",FakeDAO.getProduct(0).getPriceInEuro());
 		session.setAttribute("imageFile0", FakeDAO.getProduct(0).getImageFile());
